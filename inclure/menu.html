@@ -2,7 +2,7 @@
 #SET{structure, #CONFIG{menu_evitement}|table_valeur{structure}}
 
 <div id="menu-evitement">
-[(#GET{lien_vers_menu_admin}|=={oui}|oui|et{#ARRAY{1comite, 0minirezo}|find{#SESSION{statut}}})
+[(#GET{lien_vers_menu_admin}|oui|et{#ARRAY{1comite, 0minirezo}|find{#SESSION{statut}}})
   <a href="#spip-admin" class="lien-menu-evitement">
     <:menu_evitement:goto_admin:>
   </a>
@@ -25,7 +25,7 @@
             }
         });
 
-[(#CONFIG{menu_evitement/cacher_menu_quand_pas_focus}|=={oui}|oui)
+[(#CONFIG{menu_evitement/cacher_menu_quand_pas_focus}|oui)
 
         $('#menu-evitement').addClass('virer')
             .find('.lien-menu-evitement')
@@ -37,7 +37,7 @@
             });
 ]
 
-[(#CONFIG{menu_evitement/cacher_ancres_quand_pas_focus}|=={oui}|oui)
+[(#CONFIG{menu_evitement/cacher_ancres_quand_pas_focus}|oui)
         $('.ancre.lien-menu-evitement')
             .addClass('virer')
             .focusin(function () {

@@ -7,23 +7,23 @@
 
 if (!defined('_ECRIRE_INC_VERSION')) return;
 
-include_spip('inc/config');
+/* include_spip('inc/config'); */
 
-ecrire_config('menu_evitement',
-              array(
-                'lien_vers_menu_admin'          => 'oui',
-                'cacher_menu_quand_pas_focus'   => 'oui',
-                'cacher_ancres_quand_pas_focus' => 'oui',
-                'structure'                     => array(
-                                                     0 => array(
-                                                                'cible' => 'contenu',
-                                                                'titre' => 'Aller au contenu',
-                                                                ),
-                                                     1 => array(
-                                                                'cible' => 'extra',
-                                                                'titre' => 'Aller au menu droite',
-                                                                ),
-                                                   ),
-));
+/* ecrire_config('menu_evitement', */
+/*               array( */
+/*                 'lien_vers_menu_admin'          => 'on', */
+/*                 'cacher_menu_quand_pas_focus'   => 'on', */
+/*                 'cacher_ancres_quand_pas_focus' => 'on', */
+/*                 'structure'                     => array( */
+/*                                                      0 => array( */
+/*                                                                  'cible' => 'contenu', */
+/*                                                                 'titre' => 'Aller au contenu', */
+/*                                                                 ), */
+/*                                                      1 => array( */
+/*                                                                 'cible' => 'extra', */
+/*                                                                 'titre' => 'Aller au menu droite', */
+/*                                                                 ), */
+/*                                                    ), */
+/* )); */
 
 ?>

@@ -10,7 +10,36 @@
 		#ACTION_FORMULAIRE{#ENV{action}}
 
 		<input type="hidden" name="_meta_casier" value="menu_evitement" />
+
+    <ul>
+
+    [(#SAISIE{case, lien_vers_menu_admin,
+              label=<:menu_evitement:label_lien_vers_menu_admin:>})]
+
+    [(#SAISIE{case, cacher_menu_quand_pas_focus,
+              label=<:menu_evitement:label_cacher_menu_quand_pas_focus:>})]
+
+    [(#SAISIE{case, cacher_ancres_quand_pas_focus,
+              label=<:menu_evitement:label_cacher_ancres_quand_pas_focus:>})]
+
+    </ul>
+
+    #SET{structure, #ENV{structure}|nettoyer_structure}
+    <BOUCLE_items(DATA) {enum 0,#GET{structure}|count}>
+      <INCLURE{fond=saisies/menu-item, env, no=#VALEUR, structure=#GET{structure}}>
+    </BOUCLE_items>
+
 		<p class="boutons"><span class="image_loading">&nbsp;</span><input type="submit" class="submit" value="<:bouton_enregistrer:>" /></p>
 	</div>
 	</form>
+
+  <style>
+  .formulaire_configurer_menu_evitement form label {
+      width: 100%;
+  }
+  .formulaire_configurer_menu_evitement form .choix {
+      float: left;
+  }
+  </style>
+
 </div>

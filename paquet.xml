@@ -17,6 +17,8 @@
 
 	<licence>GNU/GPL</licence>
 
+  <lib nom="phpQuery" lien="https://code.google.com/p/phpquery/downloads/detail?name=phpQuery-0.9.5.386.zip" />
+
   <pipeline nom="affichage_final" inclure="menu_evitement_pipelines.php" />
 
 </paquet>

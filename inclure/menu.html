@@ -1,7 +1,8 @@
 #SET{lien_vers_menu_admin, #CONFIG{menu_evitement}|table_valeur{lien_vers_menu_admin}}
 #SET{structure, #CONFIG{menu_evitement}|table_valeur{structure}}
 
-[(#GET{lien_vers_menu_admin}|oui|et{#ARRAY{1comite, 0minirezo}|find{#SESSION{statut}}})
+<div id="menu-evitement">
+[(#GET{lien_vers_menu_admin}|=={oui}|oui|et{#ARRAY{1comite, 0minirezo}|find{#SESSION{statut}}})
   <a href="#spip-admin" class="lien-menu-evitement">
     <:menu_evitement:goto_admin:>
   </a>
@@ -19,9 +20,11 @@
         $('.lien-menu-evitement').keyup(function (e) {
             if (e.keyCode == 13) { // touche 'enter'
                 var href = $(this).attr('href');
-                $(href).find('a.ancre-evitement').first().focus();
+                $(href).find('a.lien-menu-evitement').first().focus();
             }
         });
     });
 })(jQuery);
 </script>
+
+</div>

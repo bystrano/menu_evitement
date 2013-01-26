@@ -13,6 +13,12 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'cfg_exemple_explication' => 'Explication de cet exemple',
 	'cfg_titre_parametrages' => 'Paramétrages',
 
+  // G
+  'goto_admin' => "aller aux boutons d'admin",
+
+  // R
+  'retour_au_menu' => 'retour au menu',
+
 	// T
 	'titre_page_configurer_menu_evitement' => 'Menu d\'évitement',
 );

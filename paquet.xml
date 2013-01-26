@@ -17,5 +17,6 @@
 
 	<licence>GNU/GPL</licence>
 
+  <pipeline nom="affichage_final" inclure="menu_evitement_pipelines.php" />
 
 </paquet>

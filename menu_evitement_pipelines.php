@@ -7,6 +7,11 @@
 
 if (!defined('_ECRIRE_INC_VERSION')) return;
 
+function menu_evitement_affichage_final ($html) {
 
+  $html = preg_replace('/(<body[^>]*>)/', '$1' . recuperer_fond('inclure/menu'), $html);
+
+  return $html;
+}
 
 ?>

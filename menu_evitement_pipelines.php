@@ -42,4 +42,10 @@ function menu_evitement_affichage_final ($html) {
   return $html;
 }
 
+function menu_evitement_insert_head_css ($flux) {
+
+  $css = recuperer_fond('inclure/insert_head_css');
+  return $flux . $css;
+}
+
 ?>

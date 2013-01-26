@@ -14,7 +14,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'cfg_titre_parametrages' => 'Paramétrages',
 
   // G
-  'goto_admin' => "aller aux boutons d'admin",
+  'goto_admin' => "Aller aux boutons d'admin",
 
   // R
   'retour_au_menu' => 'retour au menu',

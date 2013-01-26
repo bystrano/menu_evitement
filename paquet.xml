@@ -1,0 +1,21 @@
+<paquet
+	prefix="menu_evitement"
+	categorie="navigation"
+	version="1.0.0"
+	etat="dev"
+	compatibilite="[3.0.5;3.0.*]"
+	logo=""
+	documentation=""
+>
+	<!--
+		Paquet généré le 2013-01-26 13:09:05
+	-->
+
+	<nom>Menu d&#039;évitement</nom>
+
+	<auteur>Michel Bystranowski</auteur>
+
+	<licence>GNU/GPL</licence>
+
+
+</paquet>

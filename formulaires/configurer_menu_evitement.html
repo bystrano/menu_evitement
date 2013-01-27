@@ -25,9 +25,18 @@
     </ul>
 
     #SET{structure, #ENV{structure}|nettoyer_structure}
-    <BOUCLE_items(DATA) {enum 0,#GET{structure}|count}>
-      <INCLURE{fond=saisies/menu-item, env, no=#VALEUR, structure=#GET{structure}}>
-    </BOUCLE_items>
+    <div id="structures">
+      <BOUCLE_items(DATA) {enum 0,#GET{structure}|count}>
+        <INCLURE{fond=saisies/menu-item, env, no=#VALEUR, structure=#GET{structure}}>
+      </BOUCLE_items>
+    </div>
+
+    <div id="bouton-ajouter"></div>
+    <script>
+    (function ($) {
+      #INCLURE{fond=scripts/formulaire_configurer_menu_evitement.js, env}
+    })(jQuery);
+    </script>
 
 		<p class="boutons"><span class="image_loading">&nbsp;</span><input type="submit" class="submit" value="<:bouton_enregistrer:>" /></p>
 	</div>

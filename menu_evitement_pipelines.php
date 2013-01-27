@@ -18,7 +18,7 @@ function menu_evitement_affichage_final ($html) {
 
     $structure = lire_config('menu_evitement/structure');
 
-    if (lire_config('menu_evitement/lien_vers_menu_admin') == 'oui') {
+    if (lire_config('menu_evitement/lien_vers_menu_admin') == 'on') {
       $structure[] = array(
                            'cible' => 'spip-admin',
                            'texte_ancre' => '#',
@@ -46,6 +46,12 @@ function menu_evitement_insert_head_css ($flux) {
 
   $css = recuperer_fond('inclure/insert_head_css');
   return $flux . $css;
+}
+
+function menu_evitement_jqueryui_plugins ($scripts) {
+
+  $scripts[] = 'jquery.ui.sortable';
+  return $scripts;
 }
 
 ?>

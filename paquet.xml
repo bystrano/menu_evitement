@@ -23,5 +23,6 @@
 
   <pipeline nom="affichage_final" inclure="menu_evitement_pipelines.php" />
   <pipeline nom="insert_head_css" inclure="menu_evitement_pipelines.php" />
+  <pipeline nom="jqueryui_plugins" inclure="menu_evitement_pipelines.php" />
 
 </paquet>

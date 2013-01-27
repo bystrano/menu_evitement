@@ -14,7 +14,7 @@ function ajouterItem() {
 function initBoutonEffacer (index, bouton) {
 
     $(bouton).append('<a href="#bouton-effacer-' + index + '" name="bouton-effacer-'+ index +'" title="Efface definitivement">effacer</a>')
-        .mouseup(function () {
+        .click(function () {
             $(this).parents('fieldset')
                 .hide()
                 .find('input')
@@ -22,14 +22,44 @@ function initBoutonEffacer (index, bouton) {
         });
 }
 
+// Dom Ready
 $(function () {
 
+    // Bouton ajouter
     $('#bouton-ajouter')
         .append('<a href="#bouton-ajouter" name="bouton-ajouter" title="ajouter un element au menu">Plus</a>')
-        .find('a').mouseup(function () {
+        .find('a').click(function () {
             ajouterItem();
         });
 
+    // Boutons effacer
     $('.bouton-effacer').each(initBoutonEffacer);
+
+    // glisser-deposer
+    $('#structures')
+        .prepend('<input type="hidden" name="permutation-structures" />')
+        .sortable({
+            containement: 'parent',
+            cursor: 'move',
+            items: '> fieldset',
+            update: function (event, ui) {
+                $('#structures input[name="permutation-structures"]')
+                    .attr('value', (function () {
+                        var permutation = [],
+                            previousValue = '';
+
+                        $('#structures fieldset input').each(function () {
+                            var value = $(this).attr('name')
+                                            .replace(/^structure.([0-9]+).*$/, '$1');
+                            if (value !== previousValue) {
+                                previousValue = value;
+                                permutation.push(value);
+                            }
+                        });
+                        return permutation.join(',');
+                    })());
+            }
+        });
+    $('#structures').disableSelection();
 
 });

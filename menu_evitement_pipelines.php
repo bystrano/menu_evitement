@@ -7,11 +7,13 @@
 
 if (!defined('_ECRIRE_INC_VERSION')) return;
 
+include_spip('lib/phpQuery/phpQuery/phpQuery');
+include_spip('inc/config');
+
 function menu_evitement_affichage_final ($html) {
 
   if (preg_match('#<html[^>]*>#', $html)) {
 
-    include_spip('lib/phpQuery/phpQuery/phpQuery');
     $doc = phpQuery::newDocumentHTML($html);
 
     $doc['body']->prepend(recuperer_fond('inclure/menu'));
